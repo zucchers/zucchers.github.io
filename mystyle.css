@@ -1,9 +1,8 @@
-
 body {
   background: white;
   color: black;
   font-family: helvetica,arial,sans-serif;
-  margin: 0em;
+  margin: 0.8em;
   padding: 0em;
   border-width: 0px;
 }
@@ -232,10 +231,6 @@ pre.text {
   box-sizing: border-box;
 }
 
-body {
-  margin: 0.8em;
-  font-family: Arial, Helvetica, sans-serif;
-}
 
 .topnav {
   overflow: hidden;
@@ -267,19 +262,19 @@ body {
 }
 
 .left {
-  padding: 20px;
+  padding: 0px;
   float: left;
   width: 36%; /* The width is 20%, by default */
 }
 
 .main {
-  padding: 20px;
+  padding: 0px;
   float: left;
   width: 30%; /* The width is 60%, by default */
 }
 
 .right {
-  padding: 20px;
+  padding: 0px;
   float: left;
   width: 34%; /* The width is 20%, by default */
 }
