@@ -1,0 +1,429 @@
+<!-- HEADER: Simone Zuccher - 06 Aug 2023 -->
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Simone Zuccher's Web Page - More</title>
+<link rel="stylesheet" href="./../mystyle.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+
+<div class="topnav" id="myTopnav">
+  <a href="./../">Simone Zuccher</a>
+  <a href="./../cv/">CV/Bio</a>
+  <a href="./../publications/">Publications</a>
+  <a href="./../research/">Research</a>
+  <a href="./../teaching/">Teaching</a>
+  <a href="./../news/">News</a>
+  <a href="./../more/" class="active">More</a>
+  <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+    <i class="fa fa-bars"></i>
+  </a>
+</div>
+<!-- END OF HEADER -->
+<h1>More</h1>
+
+In this page you can find some other suff, such as some 
+<a class="appam" href="#appam">notes of mathematics</a>
+useful for high-school students, and some 
+<a class="programming" href="#programming">programming scripts</a>
+that I have
+written in the past.
+
+
+<br>
+<br>
+<br>
+
+<a name="appam"></a>
+<h1>Appunti di Matematica</h1>
+
+<p>
+Questi <i>Appunti semi-(dis)ordinati di Matematica per il Liceo</i>
+(e forse qualcosa in pi&ugrave;) vorrebbero riassumere, molto 
+sommariamente e senza la pretesa di sostituirsi
+al libro di testo, quanto necessario per affrontare dignitosamente la prova
+scritta di matematica all'esame di stato.
+Inoltre, potrebbero risultare utili anche agli studenti iscritti al primo anno
+di facolt&agrave; scientifiche.
+Per loro natura sono e saranno in continuo divenire; di conseguenza questa 
+pagina verr&agrave; costantemente aggiornata.
+Chiunque scovasse degli errori o avesse dei suggerimenti &egrave; vivamente
+pregato di <a href="./../">contattarmi</a>.
+</p>
+
+<p>
+<a href="./../downloads/cap3.pdf">Equazioni e disequazioni</a>:
+principi di equivalenza, intere di primo grado, fratte, intere di secondo grado,
+intere di grado superiore al secondo, sistemi, irrazionali, con valore assoluto,
+logaritmiche, esponenziali, goniometriche.
+</p>
+
+<p>
+<a href="./../downloads/cap6.pdf">Funzioni</a>:
+definizioni preliminari, grafico di una funzione e sue caratteristiche, 
+funzioni elementari, operazioni algebriche e di composizione, dominio, 
+grafico di una funzione dal grafico di un'altra.
+</p>
+
+<p>
+<a href="./../downloads/cap7.pdf">Limiti</a>:
+il concetto di limite, la sua definizione e la sua verifica, limiti delle
+funzioni elementari, algebra e calcolo dei limiti, risoluzione delle forme
+indeterminate, limiti notevoli.
+</p>
+
+<a class="top" href="#top">Top</a>
+
+<br>
+<br>
+<br>
+
+<a name="programming"></a>
+<h1>Programming</h1>
+
+<p>
+The general purpose of this page is to share some useful programming tips with
+whomever might be interested.
+</p>
+
+<p>
+I am definitely a bad programmer.
+However, in the last few years I have experienced a tremendous need to
+systematically organize the scripts that I normally use for work so as to
+be albe to run an old program right away without wondering for hours what
+it does (comments are really important!!!).
+As you will soon realize,
+I prefer the shell programming to the use of more sophisticated interpreters 
+(Perl, Python, etc.), simply because basic UNIX commands are 
+available on any Linux/UNIX platform.
+</p>
+
+<p>
+If while going through these programs (scripts) you discover bugs or find
+better and more efficient ways to do the same things (I am sure there is
+plenty!), please 
+<a href="./../">let me know</a>.
+</p>
+<a class="top" href="#top">Top</a>
+
+
+<h2>Fluid Dynamics - Octave scripts</h2>
+
+<p>
+These are some Octave scripts (compatibility with
+Matlab was not checked) that
+I wrote for teaching purpose, avoiding as many loops as I could so as to 
+to make the scripts efficient.
+</p>
+
+
+<p>
+<a href="./../downloads/lbvp3x3.m">lbvp3x3.m</a>:
+solves a linear system of 3 ODEs in 3 unknowns with mixed boundary
+conditions on a generally uneven grid.
+</p>
+
+<p>
+<a href="./../downloads/blasius.m">blasius.m</a>:
+solves Blasius equation for the incompressible boundary layer past a flat plate
+on an uneven grid.
+Requires vector of independent variable <i>&eta;</i> at grid nodes
+and returns stream-wise and normal-wall velocity components 
+<i>U</i>(<i>&eta;</i><i>)</i> and <i>V</i>(<i>&eta;</i><i>)</i>.
+</p>
+<a class="top" href="#top">Top</a>
+
+
+<h2>Gps - GnuPlot Stream</h2>
+
+<p>
+Do you love Gnuplot but find Octave not as flexible as you would like
+for making highly-customized (mainly postscript) figures?
+Then you are definitely the person 
+<a class="gps" href="#gps">this script</a>
+was meant for!
+</p>
+<a class="top" href="#top">Top</a>
+
+
+
+<br>
+<br>
+<br>
+
+<a name="gps"></a>
+<h1>gps - GnuPlot Stream</h1>
+
+
+<p>
+If you use extensively 
+<a href="http://www.gnu.org/software/octave/" target="_blank">Octave</a> and
+<a href="http://www.gnuplot.info/" target="_blank">Gnuplot</a>
+you might agree with me 
+that the former is a great environment to run computations but sometimes it
+looks not very flexible to people that use the latter for making 
+highly-customized figures, i.e. figures with special labels, 
+arrows, mathematical formulae in the legend or on the axis, and so on.
+A simple example is, from version 3.0.0 of Octave, the impossibility 
+to make plots with bullets (or filled circles), available in previous versions
+of Octave.
+</p>
+<p>
+gps (GnuPlot Stream) is intended to be called from Octave to
+generate two-dimensional and three-dimensional plots using the data from Octave
+and a stream of Gnuplot commands sent to an X11 window.
+Therefore, all gnuplot features are usable, including the possibility to plot
+both data from Octave and data saved on disk.
+The only drawback (at least so far) is that data passed from Octave to gps 
+are written on local (hidden) files. 
+This is necessary to allow the full usage of 'replot'.
+It should be mentioned that Octave provides low-level Gnuplot commands which,
+apparentely, should do the same as gps.
+However, the name of these functions change with the version and it looks like
+they will be removed from future versions of Octave.
+</p>
+
+<p>
+Some pieces of Octave code employing gps and the corresponding figures
+are reported below.
+</p>
+
+<a class="top" href="#top">Top</a>
+
+<h2>Get gps</h2>
+<p>
+Download 
+<a href="./gps.m" target="_blank">gps.m</a> and save it either in your working
+directory or in 
+the Octave directory that contains the plotting functions 
+(normally /usr/share/octave/X.Y.Z/m/plot/, where X.Y.Z is your version).
+You can also save it wherever you prefer and add that path to Octave.
+Once you have gps.m, have a look at its help from Octave (type help gps).
+I suggest you download
+<a href="./demogps.m" target="_blank">demogps.m</a> and run it to have an idea
+of what gps can do.
+You need to make sure that LaTex and dvips are installed on your system
+because they are needed to generate the postscript figures.
+</p>
+<a class="top" href="#top">Top</a>
+
+
+<h2>Example of a simple two-dimensional plot</h2>
+<p>
+<pre class=code>
+% A first simple gnuplot command
+gps("plot sin(x) t '$\\sin x$' w lp pt 7;\
+     set auto;\
+     set yrange[-1:1.6];\
+     set xlabel '$x$';\
+     set title 'Let''s plot a sine with bullets (filled circles)'")
+disp(["wait please " num2str(delay) " seconds..."]);fflush(stdout);pause(delay);
+% Add a cosine
+gps("replot cos(x) t '$\\cos x$' w lp pt 4;\
+     set title 'Let''s add a cosine (empty squares) to the sine (filled circles)'")
+% This makes the png figure you see on the webpage
+gps("set terminal png transparent;set output 'demogps2d1.png';rep;set term x11")
+% This makes the ps figure you see on the webpage
+gps("ps","demogps2d1")
+</pre>
+The Octave code above generates the following plot on the Gnuplot window.
+<div class="figure">
+<a name="demogps2d1"></a><img src="./..//pics/demogps2d1.png"
+ alt="Example of a 2D plot" width="600">
+</div>
+The above plot produces, when exported through gps, the postscript file below:
+<div class="figure">
+<a name="demogps2d1ps"></a><img src="./..//pics/demogps2d1.ps.png"
+ alt="Example of the postscript figure from the 2D plot" width="600">
+</div>
+</p>
+<a class="top" href="#top">Top</a>
+
+
+<h2>Example of a more sophisticated two-dimensional plot (with arrows)</h2>
+<p>
+<pre class=code>
+% Prepare the plot area
+gps(["set size square;\
+      set xrange[" num2str(xmin) ":" num2str(xmax) "];\
+      set yrange[" num2str(ymin) ":" num2str(ymax) "];\
+      unset key;\
+      set xlabel '$x(t)$';\
+      set ylabel '$y(t)$';\
+      set title 'This is a stable spiral';\
+      " ])
+
+% This is to generate the spirals
+for i=1:length(x0)
+   % Solve the ode
+   x =  lsode("dsys", x0(i,:), t)';
+   if (i>1)
+      pltoption="replot";
+   else
+      pltoption="plot";
+   endif
+   % Plot the current spiral
+   gps(pltoption,[x(1,:)' x(2,:)'],"t '' w l 1")
+   % This is for the arrow
+   it=85;
+   scale=0.05*max(abs(xmax-xmin),abs(ymax-ymin));
+   % Plot the arrow for the current spiral
+   gps(["set arrow from " num2str(x(1,it)) "," num2str(x(2,it)) " to "\
+             num2str(x(1,it+1)) "," num2str(x(2,it+1)) " size " num2str(scale)\
+	     ", 20 lt 1"]);
+end
+% Add a filled circle in the origin
+gps("replot",[0 0],"t '' w p pt 7 ps 2")
+% Generate vecotr field
+yn=xn=20;
+[X,Y]=meshgrid(linspace(xmin,xmax,xn),linspace(ymin,ymax,yn));
+dX=aa(1)*X + aa(2)*Y; 
+dY=aa(3)*X + aa(4)*Y;
+% Normalize vectors. 
+L = 7*sqrt(dX.^2 + dY.^2);
+% To avoid normalization leave the next line uncommented, otherwise comment it
+L = .5*max(max(L))*ones(size(dX));
+% Finally, plot. Note that this single line is equivalent to quiver
+gps("replot",[X(:) Y(:) (dX./L)(:) (dY./L)(:)],"w vectors lt 1")
+% Remove the title just for the plots
+gps("set title ''")
+% This makes the ps figure you see on the webpage
+gps("psbk","demogps2d2")
+% This makes the png figure you see on the webpage
+gps("set terminal png transparent;set output 'demogps2d2.png';rep;set term x11")
+</pre>
+The Octave code above generates the following plot on the Gnuplot window.
+<div class="figure">
+<a name="demogps2d2"></a><img src="./..//pics/demogps2d2.png"
+ alt="Example of a 2D plot" width="600">
+</div>
+The above plot produces, when exported through gps, the postscript file below:
+<div class="figure">
+<a name="demogps2d2ps"></a><img src="./..//pics/demogps2d2.ps.png"
+ alt="Example of the postscript figure from the 2D plot" width="600">
+</div>
+</p>
+<a class="top" href="#top">Top</a>
+
+
+<h2>Example of a surface in a three-dimensional plot (famous sombrero)</h2>
+<p>
+<pre class=code>
+% Number of points in x and y
+n=41;
+% Prepare data for plot
+tx = ty = linspace (-8, 8, n)';
+[xx, yy] = meshgrid (tx, ty);
+r = sqrt (xx .^ 2 + yy .^ 2) + eps;
+tz = sin (r) ./ r;
+% Plot using surface and various gnuplot stuff
+gps("splots",tx,ty,tz,"w l t '';\
+        set surface;\
+        set hidden3d;\
+        set ticslevel 0;\
+        set xlabel '$x$';\
+        set ylabel '$y$';\
+        set label '$z=\\sin\\left(\\sqrt{x^2+y^2}\\right)$' at  0,0,1.1;\
+        set title 'This is the famous sombrero';\
+        ")
+% Remove the title just for the plots
+gps("set title ''")
+% This makes the ps figure you see on the webpage
+gps("psbk3d","demogps3d1")
+% This makes the png figure you see on the webpage
+gps("set terminal png transparent;set output 'demogps3d1.png';rep;set term x11")
+</pre>
+The Octave code above generates the following plot on the Gnuplot window.
+<div class="figure">
+<a name="demogps3d1"></a><img src="./..//pics/demogps3d1.png"
+ alt="Example of a 3D plot" width="600">
+</div>
+The above plot produces, when exported through gps, the postscript file below:
+<div class="figure">
+<a name="demogps3d1ps"></a><img src="./..//pics/demogps3d1.ps.png"
+ alt="Example of the postscript figure from the 3D plot" width="600">
+</div>
+</p>
+<a class="top" href="#top">Top</a>
+
+
+<h2>Example of a three-dimensional line (famous Lorenz)</h2>
+<p>
+<pre class=code>
+% Solve the ode
+x =  lsode("dsys", x0(i,:), t');
+% Plot the solution as a single line in 3D
+gps("splot",[x(:,1) x(:,2) x(:,3)],"t '' w l 1")
+% Plot an arrow
+it=10;
+gps(["set arrow from " num2str(x(it,1)) "," num2str(x(it,2)) \
+     "," num2str(x(it,3)) " to "\
+    num2str(x(it+1,1)) "," num2str(x(it+1,2)) "," \
+    num2str(x(it+1,3))  " size graph 0.02, 20 lt 1"]);
+% Plot another one
+it=3030;
+gps(["set arrow from " num2str(x(it,1)) "," num2str(x(it,2)) \
+     "," num2str(x(it,3)) " to "\
+    num2str(x(it+1,1)) "," num2str(x(it+1,2)) "," \
+    num2str(x(it+1,3))  " size graph 0.02, 20 lt 1"]);
+% Set the axis stuff
+gps(["set auto;\
+      unset key;\
+      set xlabel '$x(t)$';\
+      set ylabel '$y(t)$';\
+      set zlabel '$z(t)$' offset graph 0.05,0.05,.55;\
+      set ticslevel 0;\
+      set title 'This is the famous Lorenz attractor';\
+      " ])
+% Plot the stable and unstable equilibria
+gps("replot",[0 0 0],"t '' w p pt 6 ps 2",\
+            [sqrt(aa(2)*aa(3)-aa(3)) sqrt(aa(2)-1)*sqrt(aa(3)) aa(2)-1],\
+	           "t '' w p pt 7 ps 2",\
+            [-sqrt(aa(2)*aa(3)-aa(3)) -sqrt(aa(2)-1)*sqrt(aa(3)) aa(2)-1],\
+	           "t '' w p pt 7 ps 2")
+% Remove the title just for the plots
+gps("set title ''")
+% This makes the png figure you see on the webpage
+gps("psbk3d","demogps3d2")
+% This makes the png figure you see on the webpage
+gps("set terminal png transparent;set output 'demogps3d2.png';rep;set term x11")
+</pre>
+The Octave code above generates the following plot on the Gnuplot window.
+<div class="figure">
+<a name="demogps3d2"></a><img src="./..//pics/demogps3d2.png"
+ alt="Example of a 3D plot" width="600">
+</div>
+The above plot produces, when exported through gps, the postscript file below:
+<div class="figure">
+<a name="demogps3d2ps"></a><img src="./..//pics/demogps3d2.ps.png"
+ alt="Example of the postscript figure from the 3D plot" width="600">
+</div>
+</p>
+<a class="top" href="#top">Top</a>
+<!-- FOOTER: Simone Zuccher - 06 Aug 2023 -->
+<div id="bottombar">
+</div>
+
+<div>
+  <span id="footerleft">
+    Last updated: 07 Aug 2023.
+  </span>
+</div>
+
+<script>
+function myFunction() {
+  var x = document.getElementById("myTopnav");
+  if (x.className === "topnav") {
+    x.className += " responsive";
+  } else {
+    x.className = "topnav";
+  }
+}
+</script>
+
+</body>
+</html>
+<!-- END OF FOOTER -->
