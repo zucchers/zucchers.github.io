@@ -1,0 +1,31 @@
+<?php
+    $vartxtTitolo = $_POST['txtTitolo'];
+    $vartxtData = $_POST['txtData'];
+    $vartxtClasse = $_POST['txtClasse'];
+    $vartxtLui = $_POST['txtLui'];
+    $vartxtLei = $_POST['txtLei'];
+    $vartxtLista = $_POST['txtLista'];
+
+    $tmpfile = shell_exec("echo -n $(date '+%Y%m%d%H%M%S%N')");
+    $fileroot = 'verifica'.$tmpfile;
+    $texfile = $fileroot.'.tex';
+    $pdffile = $fileroot.'.pdf';
+    $infile = $fileroot.'.in';
+    $infiletmp = $infile.'.tmp';
+    $gofile = 'go'.$fileroot.'.sh';
+
+
+    exec("echo 'SOURCEDIR: ./ESERCIZI-FISICA' > $infile", $output);
+    exec("echo 'TITOLO: $vartxtTitolo' >> $infile", $output);
+    exec("echo 'DATA: $vartxtData' >> $infile", $output);
+    exec("echo 'CLASSE: $vartxtClasse' >> $infile", $output);
+    exec("echo 'LUI: $vartxtLui' >> $infile", $output);
+    exec("echo 'LEI: $vartxtLei' >> $infile", $output);
+    exec("echo 'ESERCIZI:\n$vartxtLista' >> $infile", $output);
+    exec("./acc2tex.sh $infile > $infiletmp", $output);
+    exec("mv $infiletmp $infile", $output);
+    exec("./mktex.sh $infile", $output);
+    exec("./$gofile", $output);
+    exec("rm -f ./$gofile $infile $texfile", $output);
+?>
+PDF file disponibile <a href="<?php echo $pdffile; ?>">qui</a>...
