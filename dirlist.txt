@@ -6,6 +6,8 @@ more
 ./../
 teaching
 ./../
+teaching/202425
+./../../
 teaching/202324
 ./../../
 teaching/202223
